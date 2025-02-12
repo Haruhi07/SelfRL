@@ -106,6 +106,7 @@ def get_gen_config(decoding_strategy, tokenizer):
         print(f"Using random sampling with temprature 5 and return {script_args.num_return_sequences} sequences!")
     elif decoding_strategy == "beam6":
         gen_config = GenerationConfig(
+            min_length = 10,
             max_new_tokens = script_args.max_new_tokens,
             early_stopping=True,
             num_beams=6,
